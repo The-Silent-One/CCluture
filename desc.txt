@@ -1,0 +1,20 @@
+CCulture is a cultural algorithm simulation game. It simulates a population of individuals ( called cells too ) that follow a certain belief. After a certain time , each cell teams up with another to give birth to the newer generation where each new cell follows a combination of the parents' beliefs as its own then the other generation passes away. At the end of each generaion the belief system which is composed of the 3 major beliefs is updated and then every cell takes in the closet major belief to him and adds it to its belief. In this game , a belief is represented by a color ,and a  cell is represented with a circle containing a color ( its belief ). Other than asking those cells about the color they like the most , the color is a methaphor for what it believes in , so it can range from religion , to its taste in music or just its favorite color.
+
+To decide the next generation , the user has few but impactful methods of influencing through the variables defined first in the code , although randomness has a role in deciding alot of factors.
+
+This application can be a way to observe and play around with the notion or a tool to learn more and even be built upon to become a real life simulation.
+
+Now , getting to the core and understanding how it works.
+First , we have functions the word "build" in their names. These call methods from a file called graphics.py (which is a low level tool to draw simple designs ) to construct the scene that consists of :
+-top half : 3 big rectangles containing the current belief system. 
+-bottom half : a closed environment where each cell is created.
+Intially these cells are white filled since the simulation didn't start yet for a listener on the mouse is waiting for a left click on the scene. 
+After that each cell is assigned a random color from the initial culture with the calling of "first_generation". A second click will start the simulation. It will run for a set number of generations ( initiazed by the user )
+Each run will do apply these in this specific order :
+-Create the next generation "ith_generation" : a random pair of cells will be give an number of offsprings.
+If the static mode is set to "True" the number of offsprings will be two so that the size of the population will stay constant ( equal to the initial value "nb_pop" ) where one is called "traditional" having the color of one of his parents and the other "hybrid" having the sum of his parents with a percentage (the function is called "static_selection").
+If the static mode is set to "False" then the number of offsprings is a random number between "nb_min_children" and "nb_max_children" where the first and the second will have the same colors of their parents ( if number >=2) and the rest will have the sum of the colors of their parents to a declining degre.
+While all this process , with every creation , there is a possibility that a rebel will be born insted , this cell will have a random color not related to its parents.
+-Update the culture "update_culture" which sorts all the current beliefs and takes the 3 major ones and sets them as the current belief system.
+-Relate the population to the belief system by mixing each cell's color with the closest one form the belief system.
+Following this , the number of the current population and a list of all the current beliefs is printed.

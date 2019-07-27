@@ -29,20 +29,20 @@ the hex representation of the color white is "#ffffff" but to transform it to RG
 
 - **nb_max_children** is the maximal number of permitted children per parents (it is recommended that the number be *<=5* since the number of the population grows exponentially)
 
-- **static** : if **True** the minimal and maximal nubmer of children will not be taken into consideration, every pair of cells with have **2 offsprings** and pass away thus the size of the population will stay fixed. if **False** each pair of cells will have offsprings between the minal and maximal number of permitted children.
+- **static** if **True** the minimal and maximal nubmer of children will not be taken into consideration, every pair of cells with have **2 offsprings** and pass away thus the size of the population will stay fixed. if **False** each pair of cells will have offsprings between the minal and maximal number of permitted children.
 
-- **manual** : if **True** at the end of each generation, the user must click on the mouse for it to pass to the next thus have more time to observe the changes.
+- **manual** if **True** at the end of each generation, the user must click on the mouse for it to pass to the next thus have more time to observe the changes.
 
 - **c_perc** is a percentage for mixing colors, the formular of a new color is 
 ```color1*c_perc + color2*c_perc```
 
-Do note if this value is set to 100 the population and the culture will converge to the color white and if set to 0 to the color black thus it must be set away from the edge.
+> Do note if this value is set to 100 the population and the culture will converge to the color white and if set to 0 to the color black thus it must be set away from the edge.
 
 - **rebel_perc** is the probabilty of a mutation happening so, an offspring will be randomly assigned a color not necessary related to his parents (a rebel that doesn't follow its parents belief you can say)
 
 while running the application will print out a number representing the current size of the population followed by a sorted list of tuples containing each two values the value of the color in its hex representation and the number of cells having that color.
 
-Do note this is used for debugging and more inside observation, it will be removed in future release.
+> Do note this is used for debugging and more inside observation, it will be removed in future release.
 
 # future version:
 - add gifs to the documentation.
